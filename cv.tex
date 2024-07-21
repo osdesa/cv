@@ -4,6 +4,7 @@
 \usepackage[english]{babel} % multilingual support
 \usepackage[utf8]{inputenc} % encoding
 \usepackage{blindtext} % to insert blind text
+\usepackage{marvosym}
 
 % Set the default font
 \usepackage{tgpagella}
@@ -56,6 +57,16 @@
     \textsc{#1}} % small caps entry name
     #2 \par} % entry value
 
+%info
+\newcommand{\info}[3]{
+  \par \noindent
+  \makebox[0pt][l]{\textbf{Email :} #1}% zero width
+  \hfill % fill
+  \makebox[0pt][c]{\textbf{Github :} #2}% zero width
+  \hfill % fill
+  \makebox[0pt][r]{\textbf{Website :} #3}%
+  \par
+}
         
 % education entry
 \newcommand{\education}[4]{
@@ -105,21 +116,21 @@
 % new paragraph with the school in italics
   \noindent \textit{#3} \par
 % description with no hanging and in smaller text
-  \vspace*{0.5em}
+  \vspace*{0.3em}
   \noindent\hangindent=2em\hangafter=0 \small #4 
 
 %back to normal size
-\ \normalsize \par}
+\vspace*{0.5em} \normalsize \par}
 
 
 % Project
 \newcommand{\project}[3]{
 % name of the work
-  \noindent  \textbf{#1}
+  \noindent  \large \textbf{#1}
 % new paragraph with the school in italics
-  \noindent \textit{#2} \par
+  \noindent \small \textit{#2} \par
 % description with no hanging and in smaller text
-  \vspace*{0.5em}
+  \vspace*{0.2em}
   \noindent\hangindent=2em\hangafter=0 \small #3 
 %back to normal size
 \normalsize \par}
@@ -131,6 +142,7 @@
 \name{Hayden Farrell}
 
 % personal information
+\info{haydenfarrell@outlook.com}{osdesa}{haydenfarrell.me}
 
 % education
 \section*{Education}
@@ -158,15 +170,15 @@
 
 % Projects
 \section*{Projects} 
+For all projects see website or Github
 
-\project{title}{stuff}{}
+\vspace*{0.2em}
+\project{Blocky}{[C++, CMAKE, OpenGL, GLSL]}
+  {Voxel based game built using custom made game framework using openGL and C++. Ran at over 60 frames per second while prcoesing realtime physics and over 10000 voxels}
 
 % technical skills
-\section*{Technical skills}
-
-\skill{Programming languages}{\textsc{Python},
-\LaTeX, \textsc{C}, \textsc{C++}, \textsc{C\#}, 
-\textsc{Java}, \textsc{Arm}, \textsc{JS}}
-\skill{Technical Skiils}{\textsl{Markdown, Git, Vim, Linux, AWS, Cloud computing}}
+\section*{Skills}
+\skill{Tech Skills}{Python,C/C++,C\#,Java,JS,Arm,Robotics,JUNIT}
+\skill{Soft skills/Hobbies}{Leadership, bouldering, communication, adaptabilty}
 
 \end{document}
