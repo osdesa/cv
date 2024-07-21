@@ -67,7 +67,7 @@
 
         
 % education entry
-\newcommand{\education}[8]{
+\newcommand{\education}[4]{
 % name of the studies
   \noindent  \textbf{#1}
   % at the right the duration
@@ -75,25 +75,31 @@
     \framebox{% duration inside a frame box
     \parbox{6em}{%
     \centering\textbf{#2}}} \par
+  \vspace*{0.5em}
  % new paragraph with the school in italics
      \noindent \textit{#3} \par
      % description with no hanging and in smaller text
      \vspace*{0.5em}
      \noindent\hangindent=2em\hangafter=0 \small #4 
+%back to normal size
+\vspace*{0.5em} \normalsize \par}
 
+% Uni year
+\newcommand{\uniyear}[4]{
 % details on modules taken
-
     % Best module on top left
-    \noindent\hangindent=4em\hangafter=0 \small #5
+    \noindent\hangindent=4em\hangafter=0 \small #1
     % Best best module on top right
-    \hfill\noindent\hangindent=4em\hangafter=0 \small #6 
+    \hfill\noindent\hangindent=4em\hangafter=0 \small #2 
 
     % Third best module on bottom left
-    \noindent\hangindent=4em\hangafter=0 \small #7 
+    \noindent\hangindent=4em\hangafter=0 \small #3
     % Best best module on bottom right
-    \hfill\noindent\hangindent=4em\hangafter=0 \small #8 
-%back to normal size
-\normalsize \par}
+    \hfill\noindent\hangindent=4em\hangafter=0 \small #4
+
+    %back to normal size
+  \vspace*{0.5em} \normalsize \par
+}
 
 % work experience
 
@@ -112,40 +118,58 @@
   \noindent\hangindent=2em\hangafter=0 \small #4 
 
 %back to normal size
+\ \normalsize \par}
+
+
+% Project
+\newcommand{\project}[3]{
+% name of the work
+  \noindent  \textbf{#1}
+% new paragraph with the school in italics
+  \noindent \textit{#2} \par
+% description with no hanging and in smaller text
+  \vspace*{0.5em}
+  \noindent\hangindent=2em\hangafter=0 \small #3 
+%back to normal size
 \normalsize \par}
 
-
+% Start of document (what will actualaly be displayed)
 \begin{document}
-
 
 % name and motto
 \name{Hayden Farrell}
 \vspace*{-10pt}
 
 % personal information
-\sepspace
-\info{Email}{haydenfarrell@outlook.com}
-\info{Website}{haydenfarrell.me}
 
 % education
 \section*{Education}
 
 
 \education{BSc Hons Computer Science}{2023-present}{University of Nottingham}
-    {Year 1: First (84\%)} {Systems and architecture [100\%]} {Computer fundamentals [99\%]} {Programming and algorithms [97\%]} {Software Engineering [84\%]}
+    {Year 1: First (84\%)} 
+\uniyear{Systems and architecture [100\%]} {Computer fundamentals [99\%]} {Programming and algorithms [97\%]} {Software Engineering [84\%]}
+
+\education{A levels}{2021-2023}{Aquinas College - Mathematics (A) Further Mathematics (A) Computer Science (A)}
+
+\education{GCSE}{2016-2021}{Prince Henrys Grammar School - 9 GCSE between 9-5 (A*-C) including English and Maths}
 
 % work experience
 \section*{Work Experience}
 
-\work{Computer Science Mentor}{Sep 2023 - Jun 2024}{Uni of Nottingham (Computer Science deperatment)}
-{description}
+\work{Computer Science Mentor}{Sep 2023 - Jun 2024}{University of Nottingham (Computer Science deperatment)}
+{Help advise new students how to get the most out of there time at university. Taught Programming in C and Arm assembly to assist with their academics}
 
-\work{Summer school ambasador}{May 2023 - Jul 2024}{Uni of Nottingham (widening particpation team)}
-{description}
+\work{Summer school ambasador}{May 2023 - Jul 2024}{University of Nottingham (widening particpation team)}
+{Worked in a large team to assist young teens into understanding university life. Managed teams of 10 people handling timetabling and registering of those managed by me}
 
 \work{Shop assistant}{May 2022 - Sep 2022}{Marks and Spencer}
   {Worked as a part of a diverse team of over 50 members to restock the store through out the night. Using technical systems to manage stock counts to minimise stock loss}
 
+% Projects
+\section*{Projects} 
+
+\project{title}{stuff}{word}
 
 % technical skills
 \section*{Technical skills}
