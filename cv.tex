@@ -13,9 +13,9 @@
 \geometry{
   a4paper,
   left=20mm,
-  %right=
+  right=20mm,
   %bottom=
-  top=15mm}
+  top=10mm}
 
 % empty the headers, footers, pagenumbers…
 \pagestyle{empty}
@@ -36,25 +36,16 @@
 \settowidth{\spacebox}{123456789}
 
 % vertical space separator between entries
-\newcommand{\sepspace}{\vspace*{1em}}
+\newcommand{\sepspace}{\vspace*{0.5em}}
 
 % name
 \newcommand{\name}[1]{
-\Huge % font size
+\Large % font size
 \fontfamily{phv}\selectfont % font family
 % print name centered and bold
 \begin{center} \textbf{#1} \end{center}\par
 % back to normal size and font
 \normalsize\normalfont}
-
-% personal information
-\newcommand{\info}[2]{
-% set specific indentation for personal information
-  \noindent\hangindent=2em\hangafter=0
-% create a box to align two pieces of text
-  \parbox{\spacebox}{%
-  \textsl{#1}} % slanted entry name
-  #2 \par} % entry value
 
   % skill
 \newcommand{\skill}[2]{
@@ -138,7 +129,6 @@
 
 % name and motto
 \name{Hayden Farrell}
-\vspace*{-10pt}
 
 % personal information
 
@@ -169,7 +159,7 @@
 % Projects
 \section*{Projects} 
 
-\project{title}{stuff}{word}
+\project{title}{stuff}{}
 
 % technical skills
 \section*{Technical skills}
