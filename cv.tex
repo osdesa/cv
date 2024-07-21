@@ -1,0 +1,149 @@
+\documentclass[12pt]{article} %1 article with 12pt font
+
+%% PACKAGES %%
+\usepackage[english]{babel} % multilingual support
+\usepackage[utf8]{inputenc} % encoding
+\usepackage{blindtext} % to insert blind text
+
+% Set the default font
+\usepackage{tgpagella}
+
+% set the page layout
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  left=20mm,
+  %right=
+  %bottom=
+  top=15mm}
+
+% empty the headers, footers, pagenumbers…
+\pagestyle{empty}
+
+% Custom sectioning with secsty
+\usepackage{sectsty}
+
+\sectionfont{%                        
+    \large % make sections smaller
+    \fontfamily{qag}\selectfont % change font family
+    \sectionrule{0pt}{0pt}{-5pt}{1pt} % insert a thin rule
+}
+
+%% MACROS %%
+
+% size of the boxes used to align text
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789}
+
+% vertical space separator between entries
+\newcommand{\sepspace}{\vspace*{1em}}
+
+% name
+\newcommand{\name}[1]{
+\Huge % font size
+\fontfamily{phv}\selectfont % font family
+% print name centered and bold
+\begin{center} \textbf{#1} \end{center}\par
+% back to normal size and font
+\normalsize\normalfont}
+
+% personal information
+\newcommand{\info}[2]{
+% set specific indentation for personal information
+  \noindent\hangindent=2em\hangafter=0
+% create a box to align two pieces of text
+  \parbox{\spacebox}{%
+  \textsl{#1}} % slanted entry name
+  #2 \par} % entry value
+
+  % skill
+\newcommand{\skill}[2]{
+    % set specific indentation for personal information
+    \noindent\hangindent=2em\hangafter=0
+    % create a box to align two pieces of text
+    \parbox{3\spacebox}{% three times larger box
+    \textsc{#1}} % small caps entry name
+    #2 \par} % entry value
+
+        
+% education entry
+\newcommand{\education}[8]{
+% name of the studies
+  \noindent  \textbf{#1}
+  % at the right the duration
+    \hfill 
+    \framebox{% duration inside a frame box
+    \parbox{6em}{%
+    \centering\textbf{#2}}} \par
+ % new paragraph with the school in italics
+     \noindent \textit{#3} \par
+     % description with no hanging and in smaller text
+     \vspace*{0.5em}
+     \noindent\hangindent=2em\hangafter=0 \small #4 
+
+% details on modules taken
+
+    % Best module on top left
+    \noindent\hangindent=4em\hangafter=0 \small #5
+    % Best best module on top right
+    \hfill\noindent\hangindent=4em\hangafter=0 \small #6 
+
+    % Third best module on bottom left
+    \noindent\hangindent=4em\hangafter=0 \small #7 
+    % Best best module on bottom right
+    \hfill\noindent\hangindent=4em\hangafter=0 \small #8 
+%back to normal size
+\normalsize \par}
+
+% work experience
+
+\newcommand{\work}[4]{
+% name of the work
+  \noindent  \textbf{#1}
+% at the right the duration
+  \hfill 
+\framebox{% duration inside a frame box
+  \parbox{6em}{%
+  \centering\textbf{#2}}} \par
+% new paragraph with the school in italics
+  \noindent \textit{#3} \par
+% description with no hanging and in smaller text
+  \vspace*{0.5em}
+  \noindent\hangindent=2em\hangafter=0 \small #4 
+
+%back to normal size
+\normalsize \par}
+
+
+\begin{document}
+
+
+% name and motto
+\name{Hayden Farrell}
+\vspace*{-10pt}
+
+% personal information
+\sepspace
+\info{Email}{\texttt{haydenfarrell@outlook.com}}
+\info{Website}{haydenfarrell.me}
+
+% education
+\section*{Education}
+
+
+\education{BSc Hons Computer Science}{2023-present}{University of Nottingham}
+    {Year 1: First (84\%)} {Systems and architecture [100\%]} {Computer fundementals [99\%]} {Programming and algorithums [97\%]} {Software Enginnering [84\%]}
+
+% work experience
+
+
+% technical skills
+\section*{Technical skills}
+
+\skill{Programming languages}{\textsc{Python},
+\LaTeX, \textsc{C}}
+\skill{Other}{\textsl{Markdown, Git, Vim, Ubuntu}}
+
+
+
+\end{document}
