@@ -1,6 +1,7 @@
-cv.aux
-cv.fdb_latexmk
-cv.fls
-cv.log
-cv.synctex.gz
-pro.md
+*.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.gz
+/tstex_modules
